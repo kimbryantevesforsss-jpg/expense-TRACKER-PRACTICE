@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>💰 Expense Tracker Pro</h1>
+
+            <button id="darkModeBtn">
+                🌙 Dark Mode
+            </button>
+        </header>
+
+        <!-- Dashboard Cards -->
+        <section class="dashboard">
+
+            <div class="card">
+                <h3>Total Budget</h3>
+                <p id="budgetDisplay">₱0</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <p id="expenseDisplay">₱0</p>
+            </div>
+
+            <div class="card">
+                <h3>Remaining</h3>
+                <p id="remainingDisplay">₱0</p>
+            </div>
+
+            <div class="card">
+                <h3>Largest Expense</h3>
+                <p id="largestExpense">₱0</p>
+            </div>
+
+        </section>
+
+        <!-- Budget -->
+        <section class="budget-section">
+
+            <h2>Set Monthly Budget</h2>
+
+            <input
+                type="number"
+                id="budgetInput"
+                placeholder="Enter Budget">
+
+            <button id="saveBudget">
+                Save Budget
+            </button>
+
+        </section>
+
+        <!-- Add Expense -->
+        <section class="expense-form">
+
+            <h2>Add Expense</h2>
+
+            <input
+                type="text"
+                id="description"
+                placeholder="Description">
+
+            <select id="category">
+                <option>Food</option>
+                <option>Transport</option>
+                <option>Bills</option>
+                <option>Shopping</option>
+                <option>Entertainment</option>
+                <option>Other</option>
+            </select>
+
+            <input
+                type="number"
+                id="amount"
+                placeholder="Amount">
+
+            <input
+                type="date"
+                id="date">
+
+            <button id="addExpense">
+                Add Expense
+            </button>
+
+        </section>
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search Expenses">
+
+        </section>
+
+        <!-- Progress -->
+        <section class="progress-section">
+
+            <h3>Budget Usage</h3>
+
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+
+        </section>
+
+        <!-- Chart -->
+        <section class="chart-section">
+
+            <h2>Expense Breakdown</h2>
+
+            <canvas id="expenseChart"></canvas>
+
+        </section>
+
+        <!-- Export -->
+        <section class="export-section">
+
+            <button id="exportCSV">
+                📤 Export CSV
+            </button>
+
+        </section>
+
+        <!-- Expense List -->
+        <section>
+
+            <h2>Expenses</h2>
+
+            <ul id="expenseList"></ul>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
