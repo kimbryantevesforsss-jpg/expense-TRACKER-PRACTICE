@@ -221,12 +221,26 @@ function createChart() {
         data: {
             labels: [],
             datasets: [{
-                data: []
-            }]
+    data: [],
+    backgroundColor: [
+        "#22C55E",
+        "#3B82F6",
+        "#F59E0B",
+        "#EF4444",
+        "#8B5CF6",
+        "#06B6D4"
+    ]
+}]
         },
-        options: {
-            responsive: true
+       options: {
+    responsive: true,
+    plugins: {
+        legend: {
+            display: true,
+            position: "bottom"
         }
+    }
+}
     });
 
     updateChart();
@@ -235,27 +249,50 @@ function createChart() {
 // UPDATE CHART
 function updateChart() {
 
-    const categories = {};
+    const categoryTotals = {
+        Food: 0,
+        Transport: 0,
+        Bills: 0,
+        Shopping: 0,
+        Entertainment: 0,
+        Other: 0
+    };
 
     expenses.forEach(expense => {
 
-        if (!categories[expense.category]) {
-            categories[expense.category] = 0;
-        }
+        categoryTotals[expense.category] += expense.amount;
 
-        categories[expense.category] +=
-            expense.amount;
     });
 
-    chart.data.labels =
-        Object.keys(categories);
+    chart.data.labels = [
+        "Food",
+        "Transport",
+        "Bills",
+        "Shopping",
+        "Entertainment",
+        "Other"
+    ];
 
-    chart.data.datasets[0].data =
-        Object.values(categories);
+    chart.data.datasets[0].data = [
+        categoryTotals.Food,
+        categoryTotals.Transport,
+        categoryTotals.Bills,
+        categoryTotals.Shopping,
+        categoryTotals.Entertainment,
+        categoryTotals.Other
+    ];
+
+    chart.data.datasets[0].backgroundColor = [
+        "#22C55E", // Food
+        "#3B82F6", // Transport
+        "#F59E0B", // Bills
+        "#EF4444", // Shopping
+        "#8B5CF6", // Entertainment
+        "#06B6D4"  // Other
+    ];
 
     chart.update();
 }
-
 // EXPORT CSV
 exportBtn.addEventListener("click", () => {
 
