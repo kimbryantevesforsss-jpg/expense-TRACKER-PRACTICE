@@ -209,3 +209,83 @@ body.dark-mode .expense-item {
         width: 100%;
     }
 }
+/* =========================
+   TRACKMYPESO PROFILE CARD
+========================= */
+
+.profile-card {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.profile-card input {
+    max-width: 300px;
+    margin-right: 10px;
+}
+
+body.dark-mode .profile-card {
+    background: #2c2c2c;
+}
+
+/* =========================
+   GREETING CARD
+========================= */
+
+.greeting-card {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.greeting-card h2 {
+    color: #22C55E;
+}
+
+body.dark-mode .greeting-card {
+    background: #2c2c2c;
+}
+
+/* =========================
+   CHART CONTAINER
+========================= */
+
+.charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.chart-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .chart-card {
+    background: #2c2c2c;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .charts {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
