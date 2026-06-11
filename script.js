@@ -327,3 +327,65 @@ exportBtn.addEventListener("click", () => {
 
     window.URL.revokeObjectURL(url);
 });
+/* =========================
+   TRACKMYPESO GREETING
+========================= */
+
+const greetingText =
+    document.getElementById("greetingText");
+
+const nicknameInput =
+    document.getElementById("nicknameInput");
+
+const saveNicknameBtn =
+    document.getElementById("saveNicknameBtn");
+
+function updateGreeting() {
+
+    const nickname =
+        localStorage.getItem("nickname") || "User";
+
+    const hour =
+        new Date().getHours();
+
+    let greeting = "";
+
+    if (hour < 12) {
+        greeting = "Good Morning";
+    }
+    else if (hour < 18) {
+        greeting = "Good Afternoon";
+    }
+    else {
+        greeting = "Good Evening";
+    }
+
+    greetingText.textContent =
+        `${greeting}, ${nickname}! 👋`;
+}
+
+if (saveNicknameBtn) {
+
+    saveNicknameBtn.addEventListener("click", () => {
+
+        const nickname =
+            nicknameInput.value.trim();
+
+        if (!nickname) {
+            alert("Please enter a nickname.");
+            return;
+        }
+
+        localStorage.setItem(
+            "nickname",
+            nickname
+        );
+
+        updateGreeting();
+
+        nicknameInput.value = "";
+    });
+
+}
+
+updateGreeting();
