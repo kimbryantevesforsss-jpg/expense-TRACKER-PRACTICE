@@ -9,7 +9,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
 
 <header>
@@ -20,55 +19,65 @@
     </button>
 </header>
 
-<!-- PROFILE SECTION -->
+<!-- USER PROFILE -->
 
-<div class="profile-card">
+<section class="profile-card">
 
-    <input
-        type="text"
-        id="nicknameInput"
-        placeholder="Enter your nickname">
+    <h2>👤 Welcome!</h2>
 
-    <button id="saveNicknameBtn">
-        Save Nickname
-    </button>
+    <div class="nickname-container">
 
-</div>
+        <input
+            type="text"
+            id="nicknameInput"
+            placeholder="Enter your nickname">
+
+        <button id="saveNicknameBtn">
+            Save Nickname
+        </button>
+
+    </div>
+
+</section>
 
 <!-- GREETING -->
 
-<div class="greeting-card">
+<section class="greeting-card">
 
     <h2 id="greetingText">
         Welcome to trackMyPESO! 👋
     </h2>
 
-</div>
+    <p id="currentDate">
+        Today is a great day to save money.
+    </p>
+
+</section>
 
 <!-- DASHBOARD -->
 
-<div class="dashboard">
+<section class="dashboard">
 
     <div class="card">
-        <h3>💵 Income</h3>
+        <h3>💵 Total Income</h3>
         <p id="totalIncome">₱0</p>
     </div>
 
     <div class="card">
-        <h3>💸 Expenses</h3>
+        <h3>💸 Total Expenses</h3>
         <p id="totalExpenses">₱0</p>
     </div>
 
     <div class="card">
-        <h3>💰 Remaining</h3>
+        <h3>💰 Remaining Balance</h3>
         <p id="remainingBalance">₱0</p>
     </div>
 
-</div>
+</section>
 
-<div class="container">
+<!-- INCOME -->
 
-    <!-- INCOME -->
+<section class="container">
 
     <h2>Add Income</h2>
 
@@ -86,9 +95,11 @@
         Add Income
     </button>
 
-    <hr>
+</section>
 
-    <!-- EXPENSE -->
+<!-- EXPENSE -->
+
+<section class="container">
 
     <h2>Add Expense</h2>
 
@@ -104,29 +115,12 @@
 
     <select id="category">
 
-        <option value="Food">
-            🍔 Food
-        </option>
-
-        <option value="Transport">
-            🚌 Transport
-        </option>
-
-        <option value="Bills">
-            💡 Bills
-        </option>
-
-        <option value="Shopping">
-            🛒 Shopping
-        </option>
-
-        <option value="Entertainment">
-            🎮 Entertainment
-        </option>
-
-        <option value="Other">
-            📦 Other
-        </option>
+        <option value="Food">🍔 Food</option>
+        <option value="Transport">🚌 Transport</option>
+        <option value="Bills">💡 Bills</option>
+        <option value="Shopping">🛒 Shopping</option>
+        <option value="Entertainment">🎮 Entertainment</option>
+        <option value="Other">📦 Other</option>
 
     </select>
 
@@ -134,9 +128,11 @@
         Add Expense
     </button>
 
-    <hr>
+</section>
 
-    <!-- SEARCH -->
+<!-- SEARCH -->
+
+<section class="container">
 
     <h2>Search Expenses</h2>
 
@@ -145,21 +141,25 @@
         id="searchInput"
         placeholder="Search expense...">
 
-    <!-- HISTORY -->
+</section>
+
+<!-- EXPENSE HISTORY -->
+
+<section class="container">
 
     <h2>Expense History</h2>
 
     <ul id="expenseList"></ul>
 
-</div>
+</section>
 
 <!-- CHARTS -->
 
-<div class="charts">
+<section class="charts">
 
     <div class="chart-card">
 
-        <h2>Category Breakdown</h2>
+        <h2>Expense Categories</h2>
 
         <canvas id="expenseChart"></canvas>
 
@@ -173,7 +173,7 @@
 
     </div>
 
-</div>
+</section>
 
 <script src="script.js"></script>
 
