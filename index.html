@@ -3,151 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker Pro</title>
+    <title>trackMyPESO</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-    <div class="container">
+<header>
+    <h1>💰 trackMyPESO</h1>
 
-        <header>
-            <h1>💰TrackMyPESO</h1>
+    <button id="darkModeBtn">
+        🌙 Dark Mode
+    </button>
+</header>
 
-            <button id="darkModeBtn">
-                🌙 Dark Mode
-            </button>
-        </header>
+<!-- PROFILE SECTION -->
 
-        <!-- Dashboard Cards -->
-        <section class="dashboard">
+<div class="profile-card">
 
-            <div class="card">
-                <h3>Total Budget</h3>
-                <p id="budgetDisplay">₱0</p>
-            </div>
+    <input
+        type="text"
+        id="nicknameInput"
+        placeholder="Enter your nickname">
 
-            <div class="card">
-                <h3>Total Expenses</h3>
-                <p id="expenseDisplay">₱0</p>
-            </div>
+    <button id="saveNicknameBtn">
+        Save Nickname
+    </button>
 
-            <div class="card">
-                <h3>Remaining</h3>
-                <p id="remainingDisplay">₱0</p>
-            </div>
+</div>
 
-            <div class="card">
-                <h3>Largest Expense</h3>
-                <p id="largestExpense">₱0</p>
-            </div>
+<!-- GREETING -->
 
-        </section>
+<div class="greeting-card">
 
-        <!-- Budget -->
-        <section class="budget-section">
+    <h2 id="greetingText">
+        Welcome to trackMyPESO! 👋
+    </h2>
 
-            <h2>Set Monthly Budget</h2>
+</div>
 
-            <input
-                type="number"
-                id="budgetInput"
-                placeholder="Enter Budget">
+<!-- DASHBOARD -->
 
-            <button id="saveBudget">
-                Save Budget
-            </button>
+<div class="dashboard">
 
-        </section>
+    <div class="card">
+        <h3>💵 Income</h3>
+        <p id="totalIncome">₱0</p>
+    </div>
 
-        <!-- Add Expense -->
-        <section class="expense-form">
+    <div class="card">
+        <h3>💸 Expenses</h3>
+        <p id="totalExpenses">₱0</p>
+    </div>
 
-            <h2>Add Expense</h2>
+    <div class="card">
+        <h3>💰 Remaining</h3>
+        <p id="remainingBalance">₱0</p>
+    </div>
 
-            <input
-                type="text"
-                id="description"
-                placeholder="Description">
+</div>
 
-            <select id="category">
-                <option>Food</option>
-                <option>Transport</option>
-                <option>Bills</option>
-                <option>Shopping</option>
-                <option>Entertainment</option>
-                <option>Other</option>
-            </select>
+<div class="container">
 
-            <input
-                type="number"
-                id="amount"
-                placeholder="Amount">
+    <!-- INCOME -->
 
-            <input
-                type="date"
-                id="date">
+    <h2>Add Income</h2>
 
-            <button id="addExpense">
-                Add Expense
-            </button>
+    <input
+        type="text"
+        id="incomeSource"
+        placeholder="Income Source">
 
-        </section>
+    <input
+        type="number"
+        id="incomeAmount"
+        placeholder="Amount">
 
-        <!-- Search -->
-        <section class="search-section">
+    <button id="addIncomeBtn">
+        Add Income
+    </button>
 
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="🔍 Search Expenses">
+    <hr>
 
-        </section>
+    <!-- EXPENSE -->
 
-        <!-- Progress -->
-        <section class="progress-section">
+    <h2>Add Expense</h2>
 
-            <h3>Budget Usage</h3>
+    <input
+        type="text"
+        id="expenseName"
+        placeholder="Expense Name">
 
-            <div class="progress-bar">
-                <div id="progress"></div>
-            </div>
+    <input
+        type="number"
+        id="expenseAmount"
+        placeholder="Amount">
 
-        </section>
+    <select id="category">
 
-        <!-- Chart -->
-        <section class="chart-section">
+        <option value="Food">
+            🍔 Food
+        </option>
 
-            <h2>Expense Breakdown</h2>
+        <option value="Transport">
+            🚌 Transport
+        </option>
 
-            <canvas id="expenseChart"></canvas>
+        <option value="Bills">
+            💡 Bills
+        </option>
 
-        </section>
+        <option value="Shopping">
+            🛒 Shopping
+        </option>
 
-        <!-- Export -->
-        <section class="export-section">
+        <option value="Entertainment">
+            🎮 Entertainment
+        </option>
 
-            <button id="exportCSV">
-                📤 Export CSV
-            </button>
+        <option value="Other">
+            📦 Other
+        </option>
 
-        </section>
+    </select>
 
-        <!-- Expense List -->
-        <section>
+    <button id="addExpenseBtn">
+        Add Expense
+    </button>
 
-            <h2>Expenses</h2>
+    <hr>
 
-            <ul id="expenseList"></ul>
+    <!-- SEARCH -->
 
-        </section>
+    <h2>Search Expenses</h2>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search expense...">
+
+    <!-- HISTORY -->
+
+    <h2>Expense History</h2>
+
+    <ul id="expenseList"></ul>
+
+</div>
+
+<!-- CHARTS -->
+
+<div class="charts">
+
+    <div class="chart-card">
+
+        <h2>Category Breakdown</h2>
+
+        <canvas id="expenseChart"></canvas>
 
     </div>
 
-    <script src="script.js"></script>
+    <div class="chart-card">
+
+        <h2>Monthly Expenses</h2>
+
+        <canvas id="monthlyChart"></canvas>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
