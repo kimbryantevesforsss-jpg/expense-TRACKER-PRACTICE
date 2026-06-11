@@ -1,3 +1,4 @@
+alert("JavaScript is running!");
 // DOM ELEMENTS
 const budgetInput = document.getElementById("budgetInput");
 const saveBudgetBtn = document.getElementById("saveBudget");
